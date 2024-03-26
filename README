@@ -1,0 +1,6 @@
+Stwórz Virtual Environments komendą "python -m venv tutorial-env"
+Aktywuj pythona komendą "tutorial-env\Scripts\activate"
+Wpisz komendę "make install"
+Wpisz komendę "make run"
+Wejdź na adres "http://127.0.0.1:5000/"
+
