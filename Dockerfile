@@ -1,4 +1,3 @@
-# Użyj obrazu Pythona 3.9
 FROM python:3.9
 
 # Uaktualnij pip
@@ -17,4 +16,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Uruchom aplikację
-CMD [ "python", "app.py" ]
+CMD ["python", "app.py"]
