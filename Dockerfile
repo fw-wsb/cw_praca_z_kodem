@@ -1,7 +1,7 @@
 FROM python:3.9
 
 # Uaktualnij pip
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip --user
 
 # Ustaw katalog roboczy na /app
 WORKDIR /app
@@ -10,7 +10,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Zainstaluj pakiety wymienione w pliku requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt --user
 
 # Skopiuj pozostałą zawartość aplikacji do obrazu
 COPY . .
