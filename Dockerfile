@@ -15,5 +15,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Skopiuj pozostałą zawartość aplikacji do obrazu
 COPY . .
 
+# Zwiększ limit wątków
+RUN echo "kernel.threads-max=100000" >> /etc/sysctl.conf \
+    && sysctl -p
+
 # Uruchom aplikację
 CMD ["python", "app.py"]
