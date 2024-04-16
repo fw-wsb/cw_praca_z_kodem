@@ -21,3 +21,5 @@ RUN echo "kernel.threads-max=100000" >> /etc/sysctl.conf \
 
 # Uruchom aplikację
 CMD ["python", "app.py"]
+
+
