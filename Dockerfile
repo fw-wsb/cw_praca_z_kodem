@@ -1,23 +1,20 @@
-# Pobierz oficjalny obraz Python w wersji 3.9 jako bazowy obraz
+# Użyj obrazu Pythona 3.9
 FROM python:3.9
 
-# Ustaw katalog roboczy na '/app'
+# Uaktualnij pip
+RUN pip install --upgrade pip
+
+# Ustaw katalog roboczy na /app
 WORKDIR /app
 
-# Skopiuj pliki 'requirements.txt' do katalogu roboczego w kontenerze
+# Skopiuj plik requirements.txt do obrazu
 COPY requirements.txt .
 
-# Zainstaluj zależności Pythona
+# Zainstaluj pakiety wymienione w pliku requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Skopiuj resztę plików aplikacji do katalogu roboczego w kontenerze
+# Skopiuj pozostałą zawartość aplikacji do obrazu
 COPY . .
 
-# Ustaw zmienne środowiskowe, jeśli są wymagane
-# ENV VARIABLE_NAME value
-
-# Określ port, na którym aplikacja będzie nasłuchiwać
-EXPOSE 5000
-
-# Uruchom aplikację po uruchomieniu kontenera
+# Uruchom aplikację
 CMD [ "python", "app.py" ]
